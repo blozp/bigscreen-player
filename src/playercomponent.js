@@ -390,7 +390,7 @@ function PlayerComponent(
   }
 
   function setAudioTrack (index) {
-    playbackStrategy && playbackStrategy.setAudioTrack(index)
+    playbackStrategy && playbackStrategy.setAudioTrack && playbackStrategy.setAudioTrack(index)
   }
 
   function getAudioTrackIds () {
