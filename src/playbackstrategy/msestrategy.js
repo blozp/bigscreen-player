@@ -604,6 +604,16 @@ function MSEStrategy(mediaSources, windowType, mediaKind, playbackElement, isUHD
       mediaPlayer.setPlaybackRate(rate)
     },
     getPlaybackRate: () => mediaPlayer.getPlaybackRate(),
+    setAudioTrack: (index) => {
+      mediaPlayer.setCurrentTrack(mediaPlayer.getTracksFor('audio')[index])
+    },
+    getAudioTrackIds: () => {
+      let tracks = []
+      mediaPlayer.getTracksFor('audio').forEach(function (track) {
+        tracks.push(track.id)
+      })
+      return tracks
+    }
   }
 }
 
