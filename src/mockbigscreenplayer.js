@@ -49,6 +49,8 @@ var liveWindowData
 var manifestError
 
 var excludedFuncs = [
+  "setAudioTrack",
+  "getAudioTrackIds",
   "getDebugLogs",
   "mock",
   "mockJasmine",
