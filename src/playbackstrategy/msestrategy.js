@@ -605,15 +605,16 @@ function MSEStrategy(mediaSources, windowType, mediaKind, playbackElement, isUHD
     },
     getPlaybackRate: () => mediaPlayer.getPlaybackRate(),
     setAudioTrack: (index) => {
-      mediaPlayer.setCurrentTrack(mediaPlayer.getTracksFor('audio')[index])
+      mediaPlayer.setCurrentTrack(mediaPlayer.getTracksFor("audio")[index])
     },
     getAudioTrackIds: () => {
-      let tracks = []
-      mediaPlayer.getTracksFor('audio').forEach(function (track) {
+      const tracks = []
+      mediaPlayer.getTracksFor("audio").forEach((track) => {
         tracks.push(track.id)
       })
       return tracks
-    }
+    },
+    getAudioTracks: () => mediaPlayer.getTracksFor("audio"),
   }
 }
 

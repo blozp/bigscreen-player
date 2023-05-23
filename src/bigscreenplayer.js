@@ -616,6 +616,7 @@ function BigscreenPlayer() {
     getDebugLogs: () => Chronicle.retrieve(),
     setAudioTrack: (index) => playerComponent && playerComponent.setAudioTrack(index),
     getAudioTrackIds: () => playerComponent && playerComponent.getAudioTrackIds(),
+    getAudioTracks: () => playerComponent && playerComponent.getAudioTracks(),
   }
 }
 

@@ -389,16 +389,22 @@ function PlayerComponent(
     fatalError = undefined
   }
 
-  function setAudioTrack (index) {
+  function setAudioTrack(index) {
     playbackStrategy && playbackStrategy.setAudioTrack && playbackStrategy.setAudioTrack(index)
   }
 
-  function getAudioTrackIds () {
+  function getAudioTrackIds() {
     if (playbackStrategy && playbackStrategy.getAudioTrackIds) {
       return playbackStrategy.getAudioTrackIds()
-    } else {
-      return []
     }
+    return []
+  }
+
+  function getAudioTracks() {
+    if (playbackStrategy && playbackStrategy.getAudioTrackIds) {
+      return playbackStrategy.getAudioTracks()
+    }
+    return []
   }
 
   return {
@@ -418,7 +424,8 @@ function PlayerComponent(
     isPaused,
     tearDown,
     setAudioTrack,
-    getAudioTrackIds
+    getAudioTrackIds,
+    getAudioTracks,
   }
 }
 
